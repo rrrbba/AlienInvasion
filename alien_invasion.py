@@ -30,3 +30,7 @@ if __name__ == '__main__':
     ai = AlienInvasion()
     ai.run_game()
 
+
+
+#Notes
+#The object we assigned to self.screen is called a surface (part of screen where a game element can be displayed)
