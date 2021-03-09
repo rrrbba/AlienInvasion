@@ -16,6 +16,7 @@ class AlienInvasion:
         self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
         pygame.display.set_caption("Alien Invasion")
 
+        #(self) refers to the current instance of AlienInvasion
         self.ship = Ship(self)
         #Set the background color (R, G, B)
         self.bg_color = (230, 230, 230)
@@ -23,17 +24,25 @@ class AlienInvasion:
     def run_game(self):
         """Start the main loop for the game."""
         while True:
-            #Watch for keyboard and mouse events
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    sys.exit()
+            self._check_events()
+            self._update_screen()
 
-            #Redraw the screen during each pass through the loop
-            self.screen.fill(self.settings.bg_color)
-            self.ship.blitme()
+    def _check_events(self):
+        #Watch for keyboard and mouse events
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                sys.exit()
 
-            #Make the most recently drawn screen visible
-            pygame.display.flip()
+    def _update_screen(self):
+        """Update images on screen, and flip to the new screen"""
+
+        #Redraw the screen during each pass through the loop
+        self.screen.fill(self.settings.bg_color)
+        #Draws the ship on the screen
+        self.ship.blitme()
+
+        #Make the most recently drawn screen visible
+        pygame.display.flip()
 
 
 
@@ -48,3 +57,4 @@ if __name__ == '__main__':
 #The object we assigned to self.screen is called a surface (part of screen where a game element can be displayed)
 #pipenv install
 #pip install pygame
+# A helper method does work inside a class but isn't meant to be called through an instance
