@@ -70,3 +70,4 @@ if __name__ == '__main__':
 #pip install pygame
 # A helper method does work inside a class but isn't meant to be called through an instance
 # $ pip install --user pipenv
+#python -m pip install
