@@ -67,7 +67,3 @@ if __name__ == '__main__':
 #Notes
 #The object we assigned to self.screen is called a surface (part of screen where a game element can be displayed)
 #pipenv install
-#pip install pygame
-# A helper method does work inside a class but isn't meant to be called through an instance
-# $ pip install --user pipenv
-#python -m pip install
