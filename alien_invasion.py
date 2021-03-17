@@ -31,6 +31,7 @@ class AlienInvasion:
     def _check_events(self):
         #Watch for keyboard and mouse events
         for event in pygame.event.get():
+
             if event.type == pygame.QUIT:
                 sys.exit()
             elif event.type == pygame.KEYDOWN:
