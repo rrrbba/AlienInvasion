@@ -9,16 +9,19 @@ class AlienInvasion:
 
     def __init__(self):
         """Initialize the game, and create game resources."""
-
         pygame.init()
         self.settings = Settings()
 
-        self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
+        # Telling pygame to figure out the screen size to fill the screen, it            updates the settings after the screen is created
+        self.screen = pygame.display.set_mode((0,0), pygame.FULLSCREEN)
+        # Use the width and height attributes fo the screen's rect to update the        settings object
+        self.settings.screen_width = self.screen.get_rect().width
+        self.settings.screen_height = self.screen.get_rect().height
         pygame.display.set_caption("Alien Invasion")
 
-        #(self) refers to the current instance of AlienInvasion
+        # (self) refers to the current instance of AlienInvasion
         self.ship = Ship(self)
-        #Set the background color (R, G, B)
+        # Set the background color (R, G, B)
         self.bg_color = (230, 230, 230)
 
     def run_game(self):
