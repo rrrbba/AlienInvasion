@@ -23,16 +23,20 @@ class AlienInvasion:
         self.ship = Ship(self)
         # Set the background color (R, G, B)
         self.bg_color = (230, 230, 230)
+        # Group that stores all live bullets to manage the bullets that have already been fired
+        self.bullets = pygame.sprite.Group()
 
     def run_game(self):
         """Start the main loop for the game."""
         while True:
             self._check_events()
             self.ship.update()
+            # Calls bullet.update() for each bullet we place in the group bullets
+            self.bullets.update()
             self._update_screen()
 
     def _check_events(self):
-        #Watch for keyboard and mouse events
+        # Watch for keyboard and mouse events
         for event in pygame.event.get():
 
             if event.type == pygame.QUIT:
