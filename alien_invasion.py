@@ -87,6 +87,11 @@ class AlienInvasion:
                 self.bullets.remove(bullet)
         # print(len(self.bullets))
 
+    def _update_aliens(self):
+        """Update the positions of all aliens in the fleet"""
+        self.aliens.update()
+
+
     def _create_fleet(self):
         """Create the fleet of aliens"""
         # Create an alien and find the number of aliens in a row
