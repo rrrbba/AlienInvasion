@@ -37,6 +37,7 @@ class AlienInvasion:
             self._check_events()
             self.ship.update()
             self._update_bullets()
+            self._update_aliens()
             self._update_screen()
 
     def _check_events(self):
@@ -140,6 +141,6 @@ if __name__ == '__main__':
 
 
 
-#Notes
-#The object we assigned to self.screen is called a surface (part of screen where a game element can be displayed)
+# Notes
+# The object we assigned to self.screen is called a surface (part of screen where a game element can be displayed)
 #pipenv install
