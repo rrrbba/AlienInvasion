@@ -90,7 +90,7 @@ class AlienInvasion:
     def _update_aliens(self):
         """Check if the fleet is at an edge, then update the positions of all aliens in the fleet"""
         self._check_fleet_edges()
-        self.aliens.update()
+        self.aliens.update() 
 
 
     def _create_fleet(self):
