@@ -12,6 +12,7 @@ class Settings:
 
         # Ship settings (after implementing this, the ship goes slow on MacOS)
         self.ship_speed = 1.0
+        self.ship_limit = 3
 
         # Bullet settings
         self.bullet_speed = 1.0
