@@ -11,7 +11,7 @@ class Settings:
         self.bg_color = (230, 230, 230)
 
         # Ship settings (after implementing this, the ship goes slow on MacOS)
-        self.ship_speed = 1.5
+        self.ship_speed = 1.0
 
         # Bullet settings
         self.bullet_speed = 1.0
