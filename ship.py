@@ -41,4 +41,10 @@ class Ship:
         self.screen.blit(self.image, self.rect)
 
 
-        #At def__init(self, ai_game) this will give ship access to all the game         resources defined in AlienInvasion
+        #At def__init(self, ai_game) this will give ship access to all the game  resources defined in AlienInvasion
+
+
+    def center_ship(self):
+        """Center the ship on the screen"""
+        self.rect.midbottom = self.screen_rect.midbottom
+        self.x = float(self.rect.x)
