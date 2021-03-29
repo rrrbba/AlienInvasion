@@ -16,13 +16,15 @@ class AlienInvasion:
         pygame.init()
         self.settings = Settings()
 
-        # Telling pygame to figure out the screen size to fill the screen, it            updates the settings after the screen is created
+        # Telling pygame to figure out the screen size to fill the screen, it    updates the settings after the screen is created
         self.screen = pygame.display.set_mode((0,0), pygame.FULLSCREEN)
-        # Use the width and height attributes fo the screen's rect to update the        settings object
+        # Use the width and height attributes fo the screen's rect to update the settings object
         self.settings.screen_width = self.screen.get_rect().width
         self.settings.screen_height = self.screen.get_rect().height
         pygame.display.set_caption("Alien Invasion")
 
+        # Create an instance to store game stats
+        self.stats = GameStats(self)
         # (self) refers to the current instance of AlienInvasion
         self.ship = Ship(self)
         # Set the background color (R, G, B)
@@ -110,6 +112,21 @@ class AlienInvasion:
         if pygame.sprite.spritecollideany(self.ship, self.aliens):
             print("Ship hit!!!")
 
+    def _ship_hit(self):
+        """Respond to the ship being hit by an alien"""
+        # Decrement ships_left
+        self.stats.ships_left -= 15
+
+        # Get rid of any remaining aliens and bullets
+        self.aliens.empty()
+        self.bullets.empty()
+
+        # Create a new fleet and center the ship
+        self._create_fleet()
+        self.ship.center_ship()
+
+        # Pause
+        sleep(0.5)
 
     def _create_fleet(self):
         """Create the fleet of aliens"""
