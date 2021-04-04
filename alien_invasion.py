@@ -152,6 +152,7 @@ class AlienInvasion:
             # Destroy exisiting bullets and create new fleet
             self.bullets.empty() #removes bullets if self.aleins is empty
             self._create_fleet()
+            self.settings.increase_speed()
 
     def _ship_hit(self):
         """Respond to the ship being hit by an alien"""
