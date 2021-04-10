@@ -43,7 +43,7 @@ class Scoreboard:
         self.high_score_rect.centerx = self.screen_rect.centerx
         self.high_score_rect.top = self.score_rect.top
 
-    def check_high_scores(self):
+    def check_high_score(self):
         """Check if there's a new high score"""
         if self.stats.score > self.stats.high_score:
             self.stats.high_score = self.stats.score
