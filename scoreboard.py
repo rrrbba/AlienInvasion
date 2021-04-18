@@ -39,7 +39,7 @@ class Scoreboard:
         self.level_image = self.font.render(level_str, True, self.text_color, self.settings.bg_color)
         
         # Position the level below the score 
-        self.level_rect = self.level_image()
+        self.level_rect = self.level_image.get_rect()
         self.level_rect.right = self.score_rect.right
         self.level_rect.top = self.score_rect.bottom + 10
 
