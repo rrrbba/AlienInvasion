@@ -48,7 +48,7 @@ class Scoreboard:
 
     def prep_high_score(self):
         """Turn the high score into a rendered image"""
-        high_score = round(self.stats.high_score, -1)
+        high_score = round(int(self.stats.high_score), -1)
         high_score_str = "{:,}".format(high_score)
         self.high_score_image = self.font.render(high_score_str, True, self.text_color, self.settings.bg_color)
 
@@ -59,7 +59,7 @@ class Scoreboard:
 
     def check_high_score(self):
         """Check if there's a new high score"""
-        if self.stats.score > self.stats.high_score:
+        if int(self.stats.score) > int(self.stats.high_score):
             self.stats.high_score = self.stats.score
             self.prep_high_score()
             with open('highscore.txt', 'w') as writer:
