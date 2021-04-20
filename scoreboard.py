@@ -62,7 +62,10 @@ class Scoreboard:
         if self.stats.score > self.stats.high_score:
             self.stats.high_score = self.stats.score
             self.prep_high_score()
+            with open('highscore.txt', 'w') as writer:
+                writer.write(str(self.stats.high_score))
 
+        
     def prep_ships(self):
         """Show how many ships are left"""
         self.ships = Group()
